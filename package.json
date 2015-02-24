@@ -1,0 +1,21 @@
+{
+  "name": "react-workshop",
+  "version": "0.0.0",
+  "description": "React from the ground up",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "workshop8"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Dawid Warpas",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "~0.7.5"
+  }
+}
