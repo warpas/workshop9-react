@@ -20,6 +20,7 @@
   "dependencies": {
     "http-server": "~0.7.5",
     "browserify": "~9.0.3",
-    "watchify": "~2.4.0"
+    "watchify": "~2.4.0",
+    "react": "~0.12.2"
   }
 }
