@@ -2,13 +2,15 @@
   "name": "react-workshop",
   "version": "0.0.0",
   "description": "React from the ground up",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server dist --silent",
+    "watch": "npm start & watchify . -o dist/app.js --verbose --debug --extension .jsx"
   },
   "repository": {
     "type": "git",
-    "url": "workshop8"
+    "url": "workshop8-react"
   },
   "keywords": [
     "react"
@@ -16,6 +18,8 @@
   "author": "Dawid Warpas",
   "license": "ISC",
   "dependencies": {
-    "http-server": "~0.7.5"
+    "http-server": "~0.7.5",
+    "browserify": "~9.0.3",
+    "watchify": "~2.4.0"
   }
 }
