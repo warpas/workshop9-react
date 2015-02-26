@@ -2,13 +2,10 @@ console.log("src/app.js reporting!");
 
 var React = require('react/addons');
 
-var App = React.createClass({displayName: "App",
+var App = React.createClass({
   render: function() {
-    return React.createElement("h3", null, "Hello, world!");
+    return <h3>Hello, world!</h3>;
   }
 });
 
-React.render(
-  React.createElement(App),
-  document.getElementById('slot')
-);
+React.render(<App />, document.getElementById('slot'));
