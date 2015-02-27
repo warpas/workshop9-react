@@ -44,10 +44,22 @@ var Stories = React.createClass({
     var storyList = [];
     if(this.state.all.length > 0) {
       this.state.all.forEach(function(story) {
-        storyList.push(<li><a href={story.url}>{story.title}</a></li>);
+        storyList.push(<Story entry={story} />);
       })
     }
     return <ul>{storyList}</ul>;
+  }
+});
+
+var Story = React.createClass({
+  render: function() {
+    return (
+      <li>
+        <a href={this.props.entry.url}>
+          {this.props.entry.title}
+        </a>
+      </li>
+    );
   }
 });
 
