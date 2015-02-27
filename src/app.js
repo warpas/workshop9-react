@@ -42,6 +42,11 @@ var Stories = React.createClass({
 
   _storyList: function() {
     var storyList = [];
+    if(this.state.all.length > 0) {
+      this.state.all.forEach(function(story) {
+        storyList.push(<li><a href={story.url}>{story.title}</a></li>);
+      })
+    }
     return <ul>{storyList}</ul>;
   }
 });
