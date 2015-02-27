@@ -1,6 +1,7 @@
 console.log("src/app.js reporting!");
 
 var React = require('react/addons');
+var $ = require('jquery');
 
 var App = React.createClass({
   render: function() {
@@ -20,13 +21,29 @@ var Stories = React.createClass({
     };
   },
 
+  componentDidMount: function() {
+    $.get(this.props.source, function(result) {
+      if(this.isMounted()) {
+        this.setState({
+          all: result
+        });
+      }
+    }.bind(this));
+  },
+
   render: function() {
     return (
       <div className="stories">
         <h4>Stories:</h4>
+        {this._storyList()}
       </div>
     );
   },
+
+  _storyList: function() {
+    var storyList = [];
+    return <ul>{storyList}</ul>;
+  }
 });
 
 React.render(<App />, document.getElementById('slot'));

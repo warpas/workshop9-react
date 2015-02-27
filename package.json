@@ -22,7 +22,8 @@
     "browserify": "~9.0.3",
     "watchify": "~2.4.0",
     "react": "~0.12.2",
-    "reactify": "~1.0.0"
+    "reactify": "~1.0.0",
+    "jquery": "~2.1.3"
   },
   "browserify": {
     "transform": [
