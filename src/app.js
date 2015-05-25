@@ -41,10 +41,9 @@ var Stories = React.createClass({
   },
 
   _storyList: function() {
-    var storyList = [];
     if(this.state.all.length > 0) {
-      this.state.all.forEach(function(story) {
-        storyList.push(<Story entry={story} />);
+      var storyList = this.state.all.map(function(story) {
+        return <Story entry={story} />;
       })
     }
     return <ul>{storyList}</ul>;
