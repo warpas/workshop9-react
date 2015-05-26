@@ -3,8 +3,6 @@ console.log("src/app.js reporting!");
 var React = require('react/addons');
 var $ = require('jquery');
 var RB = require('react-bootstrap');
-var ListGroup = RB.ListGroup;
-var ListGroupItem = RB.ListGroupItem;
 
 var Header = React.createClass({
   render: function() {
@@ -59,18 +57,18 @@ var Stories = React.createClass({
         return <Story entry={story} />;
       })
     }
-    return <ListGroup>{storyList}</ListGroup>;
+    return <RB.ListGroup>{storyList}</RB.ListGroup>;
   }
 });
 
 var Story = React.createClass({
   render: function() {
     return (
-      <ListGroupItem>
+      <RB.ListGroupItem>
         <a href={this.props.entry.url}>
           {this.props.entry.title}
         </a>
-      </ListGroupItem>
+      </RB.ListGroupItem>
     );
   }
 });
