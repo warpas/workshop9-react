@@ -18,8 +18,8 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <h3>Hello, world!</h3>
         <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
+        <RB.Button bsStyle="info" href="https://github.com/warps/workshop9-react">Github Link</RB.Button>
       </div>
     );
   }
