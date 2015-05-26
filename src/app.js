@@ -45,10 +45,14 @@ var Stories = React.createClass({
   render: function() {
     return (
       <div className="stories">
-        <h4>Stories:</h4>
+        <h5>Stories: {this._storiesLength()}</h5>
         {this._storyList()}
       </div>
     );
+  },
+
+  _storiesLength: function() {
+    return <RB.Badge>{this.state.all.length}</RB.Badge>;
   },
 
   _storyList: function() {
