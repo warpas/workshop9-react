@@ -6,6 +6,16 @@ var RB = require('react-bootstrap');
 var ListGroup = RB.ListGroup;
 var ListGroupItem = RB.ListGroupItem;
 
+var Header = React.createClass({
+  render: function() {
+    return (
+      <RB.Navbar brand='News Feed on React.js' staticTop='true' inverse='true' right='true'>
+        <h5>Pilot Academy Workshop</h5>
+      </RB.Navbar>
+    );
+  }
+});
+
 var App = React.createClass({
   render: function() {
     return (
@@ -65,4 +75,5 @@ var Story = React.createClass({
   }
 });
 
+React.render(<Header />, document.getElementById('head-slot'));
 React.render(<App />, document.getElementById('slot'));
