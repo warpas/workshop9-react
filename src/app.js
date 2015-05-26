@@ -18,7 +18,18 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
+        <h3>Stories</h3>
+        <RB.TabbedArea>
+          <RB.TabPane eventKey={1} tab="All">
+            <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
+          </RB.TabPane>
+          <RB.TabPane eventKey={2} tab="Popular">
+            <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
+          </RB.TabPane>
+          <RB.TabPane eventKey={3} tab="Recent">
+            <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
+          </RB.TabPane>
+        </RB.TabbedArea>
         <RB.Button bsStyle="info" href="https://github.com/warps/workshop9-react">Github Link</RB.Button>
       </div>
     );
@@ -45,7 +56,6 @@ var Stories = React.createClass({
   render: function() {
     return (
       <div className="stories">
-        <h5>Stories: {this._storiesLength()}</h5>
         {this._storyList()}
       </div>
     );
