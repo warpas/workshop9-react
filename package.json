@@ -23,7 +23,8 @@
     "react": "~0.12.2",
     "reactify": "~1.0.0",
     "jquery": "~2.1.3",
-    "react-bootstrap": "~0.16.0"
+    "react-bootstrap": "~0.16.0",
+    "react-router": "~0.12.4"
   },
   "devDependencies": {
     "watchify": "~2.4.0"
