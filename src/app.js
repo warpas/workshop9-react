@@ -25,7 +25,7 @@ var Header = React.createClass({
   render: function() {
     return (
       <div className="head-slot">
-        <RB.Navbar brand='News Feed on React.js' staticTop='true' inverse='true' right='true'>
+        <RB.Navbar brand='News Feed on React.js' staticTop={true} inverse={true}>
           <h5>Pilot Academy Workshop</h5>
         </RB.Navbar>
       </div>
