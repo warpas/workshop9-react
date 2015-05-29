@@ -3,6 +3,7 @@ console.log("src/app.js reporting!");
 var React = require('react/addons');
 var $ = require('jquery');
 var RB = require('react-bootstrap');
+var Router = require('react-router');
 
 var Header = React.createClass({
   render: function() {
@@ -14,23 +15,48 @@ var Header = React.createClass({
   }
 });
 
+var Popular = React.createClass({
+  render: function() {
+    return (
+      <div className="popular-class-popular">
+        <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
+      </div>
+    );
+  }
+});
+
+var Recent = React.createClass({
+  render: function() {
+    return (
+      <div className="popular-class-popular">
+        <Stories source="https://fierce-gorge-1132.herokuapp.com/stories/recent" />
+      </div>
+    );
+  }
+});
+
 var App = React.createClass({
   render: function() {
     return (
       <div>
-        <h3>Stories</h3>
-        <RB.TabbedArea>
-          <RB.TabPane eventKey={1} tab="All">
-            <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
-          </RB.TabPane>
-          <RB.TabPane eventKey={2} tab="Popular">
-            <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
-          </RB.TabPane>
-          <RB.TabPane eventKey={3} tab="Recent">
-            <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
-          </RB.TabPane>
-        </RB.TabbedArea>
-        <RB.Button bsStyle="info" href="https://github.com/warps/workshop9-react">Github Link</RB.Button>
+        <div id="head-slot">
+          <Header />
+        </div>
+        <div className="container">
+          <h3>Stories</h3>
+          <Router.Link to="popular">
+            <RB.Button bsStyle="primary" className="btn-popular" href="/popular">
+              Popular
+            </RB.Button>
+          </Router.Link>
+          <Router.Link to="recent">
+            <RB.Button bsStyle="primary" className="btn-recent" href="/recent">
+              Recent
+            </RB.Button>
+          </Router.Link>
+          <Router.RouteHandler />
+          <RB.Button bsStyle="info" href="https://github.com/warps/workshop9-react">Github Link</RB.Button>
+        </div>
       </div>
     );
   }
@@ -87,5 +113,14 @@ var Story = React.createClass({
   }
 });
 
-React.render(<Header />, document.getElementById('head-slot'));
-React.render(<App />, document.getElementById('slot'));
+var routes = (
+  <Router.Route handler={App} path="/">
+    <Router.DefaultRoute handler={Popular} />
+    <Router.Route name="popular" handler={Popular} />
+    <Router.Route name="recent" handler={Recent} />
+  </Router.Route>
+);
+
+Router.run(routes, function (Handler) {
+  React.render(<Handler/>, document.body);
+});
