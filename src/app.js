@@ -5,34 +5,6 @@ var $ = require('jquery');
 var RB = require('react-bootstrap');
 var Router = require('react-router');
 
-var Header = React.createClass({
-  render: function() {
-    return (
-      <div className="head-slot">
-        <RB.Navbar brand='News Feed on React.js' staticTop='true' inverse='true' right='true'>
-          <h5>Pilot Academy Workshop</h5>
-        </RB.Navbar>
-      </div>
-    );
-  }
-});
-
-var Popular = React.createClass({
-  render: function() {
-    return (
-      <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
-    );
-  }
-});
-
-var Recent = React.createClass({
-  render: function() {
-    return (
-      <Stories source="https://fierce-gorge-1132.herokuapp.com/stories/recent" />
-    );
-  }
-});
-
 var App = React.createClass({
   render: function() {
     return (
@@ -44,6 +16,18 @@ var App = React.createClass({
           <Router.RouteHandler />
           <RB.Button bsStyle="info" href="https://github.com/warps/workshop9-react">Github Link</RB.Button>
         </div>
+      </div>
+    );
+  }
+});
+
+var Header = React.createClass({
+  render: function() {
+    return (
+      <div className="head-slot">
+        <RB.Navbar brand='News Feed on React.js' staticTop='true' inverse='true' right='true'>
+          <h5>Pilot Academy Workshop</h5>
+        </RB.Navbar>
       </div>
     );
   }
@@ -64,6 +48,22 @@ var Menu = React.createClass({
           </RB.Button>
         </Router.Link>
       </nav>
+    );
+  }
+});
+
+var Popular = React.createClass({
+  render: function() {
+    return (
+      <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
+    );
+  }
+});
+
+var Recent = React.createClass({
+  render: function() {
+    return (
+      <Stories source="https://fierce-gorge-1132.herokuapp.com/stories/recent" />
     );
   }
 });
