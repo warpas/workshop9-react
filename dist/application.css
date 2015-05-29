@@ -11,3 +11,8 @@
 .menu .btn-popular {
   margin-right: 10px;
 }
+
+.not-found {
+  height: 100px;
+  padding-top: 10px;
+}

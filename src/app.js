@@ -52,6 +52,16 @@ var Menu = React.createClass({
   }
 });
 
+var NotFound = React.createClass({
+  render: function() {
+    return (
+      <div className="not-found">
+        <h4>Path not found</h4>
+      </div>
+    );
+  }
+});
+
 var Popular = React.createClass({
   render: function() {
     return (
@@ -121,9 +131,10 @@ var Story = React.createClass({
 
 var routes = (
   <Router.Route handler={App} path="/">
-    <Router.DefaultRoute handler={Popular} />
     <Router.Route name="popular" handler={Popular} />
     <Router.Route name="recent" handler={Recent} />
+    <Router.NotFoundRoute handler={NotFound}/>
+    <Router.Redirect from="/" to="popular" />
   </Router.Route>
 );
 
