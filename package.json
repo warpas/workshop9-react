@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server dist --silent",
-    "watch": "npm start & watchify . -o dist/app.js --verbose --debug --extension .jsx"
+    "watch": "npm start & watchify . -o dist/app.js --verbose --debug --extension .jsx",
+    "postinstall": "npm browserify . -o dist/app.js --extension .jsx"
   },
   "repository": {
     "type": "git",
