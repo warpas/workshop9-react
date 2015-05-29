@@ -8,9 +8,11 @@ var Router = require('react-router');
 var Header = React.createClass({
   render: function() {
     return (
-      <RB.Navbar brand='News Feed on React.js' staticTop='true' inverse='true' right='true'>
-        <h5>Pilot Academy Workshop</h5>
-      </RB.Navbar>
+      <div className="head-slot">
+        <RB.Navbar brand='News Feed on React.js' staticTop='true' inverse='true' right='true'>
+          <h5>Pilot Academy Workshop</h5>
+        </RB.Navbar>
+      </div>
     );
   }
 });
@@ -18,9 +20,7 @@ var Header = React.createClass({
 var Popular = React.createClass({
   render: function() {
     return (
-      <div className="popular-class-popular">
-        <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
-      </div>
+      <Stories source="https://fierce-gorge-1132.herokuapp.com/stories" />
     );
   }
 });
@@ -28,9 +28,7 @@ var Popular = React.createClass({
 var Recent = React.createClass({
   render: function() {
     return (
-      <div className="popular-class-popular">
-        <Stories source="https://fierce-gorge-1132.herokuapp.com/stories/recent" />
-      </div>
+      <Stories source="https://fierce-gorge-1132.herokuapp.com/stories/recent" />
     );
   }
 });
@@ -38,26 +36,34 @@ var Recent = React.createClass({
 var App = React.createClass({
   render: function() {
     return (
-      <div>
-        <div id="head-slot">
-          <Header />
-        </div>
+      <div >
+        <Header />
         <div className="container">
           <h3>Stories</h3>
-          <Router.Link to="popular">
-            <RB.Button bsStyle="primary" className="btn-popular" href="/popular">
-              Popular
-            </RB.Button>
-          </Router.Link>
-          <Router.Link to="recent">
-            <RB.Button bsStyle="primary" className="btn-recent" href="/recent">
-              Recent
-            </RB.Button>
-          </Router.Link>
+          <Menu />
           <Router.RouteHandler />
           <RB.Button bsStyle="info" href="https://github.com/warps/workshop9-react">Github Link</RB.Button>
         </div>
       </div>
+    );
+  }
+});
+
+var Menu = React.createClass({
+  render: function() {
+    return (
+      <nav className="menu">
+        <Router.Link to="popular">
+          <RB.Button bsStyle="primary" className="btn-popular" href="/popular">
+            Popular
+          </RB.Button>
+        </Router.Link>
+        <Router.Link to="recent">
+          <RB.Button bsStyle="primary" className="btn-recent" href="/recent">
+            Recent
+          </RB.Button>
+        </Router.Link>
+      </nav>
     );
   }
 });
